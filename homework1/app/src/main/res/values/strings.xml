@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Homework1</string>
+    <string name="value2field_text">Value 2:</string>
+    <string name="value1field_text">Value 1:</string>
+    <string name="operator_text">Operator:</string>
+    <string name="value_enter_hint">Enter a Number...</string>
+    <string name="calculate_button_text">  \u0020Calculate \u0020 </string>
+    <string name="result_text">Result:</string>
+    <string-array name="operator_array">
+        <item>+</item>
+        <item>-</item>
+        <item>*</item>
+        <item>/</item>
+        <item>^</item>
+    </string-array>
+
+</resources>
