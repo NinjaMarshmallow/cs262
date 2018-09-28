@@ -1,0 +1,5 @@
+Name: Jason Klaassen
+Team Reviewed: Team A aka The A Team
+
+
+Goal is to the point and specific on what their app will accomplish. Some parts of the vision statement are very specific. You do not describe yourselves at all. The idea itself though is very cool and could be very useful to those who seem to run out of time often. I'm not able to view their Trello board, so I can't comment on their completed Sprint tasks. Their code is there and looks well written and documented. There isn't much non-boiler plate code at the moment anyway, so not much to say about the code. The idea should be relatively easy to implement. There shouldn't be too many moving parts or network usage besides perhaps some database use.
