@@ -16,10 +16,10 @@ public class NetworkUtils {
     private static final String MONOPOLY_PLAYERS_URL = "https://calvincs262-monopoly.appspot.com/monopoly/v1/players";
 
     static String getPlayerInfo(String queryString){
-        if(queryString == "") {
+        if(queryString.trim().equals("")) {
             return makeRequest(MONOPOLY_PLAYERS_URL);
         } else {
-            return makeRequest(MONOPOLY_PLAYERS_URL + "/" + queryString);
+            return makeRequest(MONOPOLY_GET_PLAYER + "/" + queryString);
         }
     }
 

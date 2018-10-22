@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public void onLoadFinished(@NonNull Loader<String> loader, String s) {
-        System.out.println(s);
+        playersList.clear();
         try {
             JSONObject json = new JSONObject(s);
             if(json.isNull("items")) {
@@ -79,10 +79,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         } catch(Exception e) {
             e.printStackTrace();
         }
-
-        for(String player : playersList){
-            System.out.println(player);
-        }
+        recyclerView.setAdapter(new RecyclerAdapter(this, playersList.toArray(new String[playersList.size()])));
     }
 
     @Override
