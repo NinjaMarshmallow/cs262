@@ -1,11 +1,3 @@
 <resources>
-    <string name="app_name">Homework 2 - Monopoly Players</string>
-    <string name="instructions">Enter a book name, or part of a
-book name, or just some text from a book to find
-the full book title and who wrote the book!</string>
-    <string name="button_text">Fetch</string>
-    <string name="input_hint">Enter a Player Number</string>
-    <string name="loading_text">Loading...</string>
-    <string name="search_term_text">Please enter a Player Number</string>
-    <string name="check_network_text">Please check your network connection and try again.</string>
+    <string name="app_name">lab07</string>
 </resources>

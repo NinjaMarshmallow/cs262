@@ -1,4 +1,4 @@
-package jwk24.cs262.calvin.edu.lab05;
+package teamb.cs262.calvin.edu.lab07;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("jwk24.cs262.calvin.edu.lab05", appContext.getPackageName());
+        assertEquals("teamb.cs262.calvin.edu.lab07", appContext.getPackageName());
     }
 }

@@ -1,4 +1,4 @@
-package jwk24.cs262.calvin.edu.lab05;
+package teamb.cs262.calvin.edu.lab07;
 
 import org.junit.Test;
 

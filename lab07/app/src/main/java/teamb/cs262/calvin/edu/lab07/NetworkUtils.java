@@ -1,4 +1,4 @@
-package jwk24.cs262.calvin.edu.lab05;
+package teamb.cs262.calvin.edu.lab07;
 
 import android.net.Uri;
 import android.util.Log;
@@ -11,18 +11,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class NetworkUtils {
-
     private static final String LOG_TAG = NetworkUtils.class.getSimpleName();
-
-    private static final String BOOK_BASE_URL =  "https://www.googleapis.com/books/v1/volumes?"; // Base URI for the Books API
     private static final String MONOPOLY_GET_PLAYER = "https://calvincs262-monopoly.appspot.com/monopoly/v1/player";
     private static final String MONOPOLY_PLAYERS_URL = "https://calvincs262-monopoly.appspot.com/monopoly/v1/players";
-    private static final String QUERY_PARAM = "q"; // Parameter for the search string
-    private static final String MAX_RESULTS = "maxResults"; // Parameter that limits search results
-    private static final String PRINT_TYPE = "printType";   // Parameter to filter by print type
 
-
-    static String getBookInfo(String queryString){
+    static String getPlayerInfo(String queryString){
         if(queryString == "") {
             return makeRequest(MONOPOLY_PLAYERS_URL);
         } else {
@@ -33,7 +26,7 @@ public class NetworkUtils {
     private static String makeRequest(String url) {
         HttpURLConnection urlConnection = null;
         BufferedReader reader = null;
-        String bookJSONString = null;
+        String playerJSONString = null;
         try {
 //            Uri builtURI = Uri.parse(BOOK_BASE_URL).buildUpon()
 //                    .appendQueryParameter(QUERY_PARAM, queryString)
@@ -63,7 +56,7 @@ public class NetworkUtils {
                 // Stream was empty.  No point in parsing.
                 return null;
             }
-            bookJSONString = buffer.toString();
+            playerJSONString = buffer.toString();
 
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -79,8 +72,9 @@ public class NetworkUtils {
                     e.printStackTrace();
                 }
             }
-            Log.d(LOG_TAG, bookJSONString);
-            return bookJSONString;
+            Log.d(LOG_TAG, playerJSONString);
+            return playerJSONString;
         }
     }
 }
+
