@@ -1,0 +1,19 @@
+Lab09 Answers
+
+9.1
+
+a.
+This API supports 2 main endpoints: /players and /player/ID
+The /players endpoint simply returns all players in the database
+The /player/ID endpoint returns a specifc player with the given ID
+It appears that there are as many /player endpoints as players, but the ID is more like a parameter than another distinct endpoint
+
+b.
+    i. Firebase
+    ii. 
+        1. SQL queries are done directly on database tables whereas JDBC statement objects are abstractions of these SQL commands that allows a developer to access a database without learning SQL
+        2. SQL relations are structured very differently as tables 
+    iii. When executing a dynamically created SQL command with a String formatter, getValueStringOrNull is used to ensure that the java value of null is never attempted to be spliced into the string formatter
+c. 
+    i. The Player DAO fields match exactly the fields of the Player database object, so that data collected from a query is saved smoothly into the running application.
+    ii. They contain all the same fields. The DAO is a code representation of a row in the table.
