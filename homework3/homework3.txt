@@ -1,0 +1,18 @@
+1.
+	a. Yes, it accesses the database via a URL endpoint. Uses HTTP methods as the CRUD operations for the database. The URIs have a directory structure and use JSON as the data transfer type.
+
+	b. GET is nullipotent and so is also idempotent. PUT and DELETE is idempotent. POST is multipotent because each execution can result in a different state.
+
+	c. Yes, since SQL is declarative and Java is imperative. There is a mismatch resulting in lost efficiency.
+
+	d. If the inputs are not sanitized properly, then some malcontent could enter a proper value, but then add a semicolon and write another sql command alongside.
+
+2. 
+	a. Trello shows that everyone is doing something. Quenton Barnes is doing about half the hours though. This could just be not everyone logging their hours. Although Quenton also has more commits and merges on github than all the others combined. Some still only have 1 commit ever.
+
+	b. The domain model is pretty confusing at first, but after looking at it for awhile, it makes sense. I just find it weird that Time is an object which is essentially a join table of employee and project. The objects within the domain model makes sense for their projects scope as a time recorder in a business setting. It seems a little weird that everything the employee works on must have a project attached to it. I guess one could add a "Other" Project to hold everything not related to a specific project. The database schema is essentially an implementation of their domain model. Each object is implemented as a table and binded in the same ways. Everything looks very sound.
+
+
+	c. Can't get the code to run without some android studio wrangling, but the code is well-documented with docstrings and seems to be well-written.
+
+	d. Their presentation was pretty effective, although it was a bit boring at parts because most of the presentation was given by only Tyler Vredeveld and he seemed to pause a lot as if he had forgotten what he practiced to say once he got in front of everyone, which is understandable. Like our group, they all sat down along the sides during question time instead of all coming to the front to field questions, which wasn't ideal. Their demo worked really well though. They obviously practiced that and ensured their projection software worked well.
