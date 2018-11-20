@@ -1,0 +1,5 @@
+11.1
+
+Code Consistency ChangeLog
+-Added a bunch of Javadoc notation to the functions of Homeworks 1 & 2
+-Reformated the Code, which fixed a few minor indentation anomolies and random spaces using the Android Studio Code Formatter

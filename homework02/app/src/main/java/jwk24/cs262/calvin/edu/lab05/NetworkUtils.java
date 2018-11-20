@@ -14,7 +14,7 @@ public class NetworkUtils {
 
     private static final String LOG_TAG = NetworkUtils.class.getSimpleName();
 
-    private static final String BOOK_BASE_URL =  "https://www.googleapis.com/books/v1/volumes?"; // Base URI for the Books API
+    private static final String BOOK_BASE_URL = "https://www.googleapis.com/books/v1/volumes?"; // Base URI for the Books API
     private static final String MONOPOLY_GET_PLAYER = "https://calvincs262-monopoly.appspot.com/monopoly/v1/player";
     private static final String MONOPOLY_PLAYERS_URL = "https://calvincs262-monopoly.appspot.com/monopoly/v1/players";
     private static final String QUERY_PARAM = "q"; // Parameter for the search string
@@ -22,8 +22,8 @@ public class NetworkUtils {
     private static final String PRINT_TYPE = "printType";   // Parameter to filter by print type
 
 
-    static String getBookInfo(String queryString){
-        if(queryString == "") {
+    static String getBookInfo(String queryString) {
+        if (queryString == "") {
             return makeRequest(MONOPOLY_PLAYERS_URL);
         } else {
             return makeRequest(MONOPOLY_PLAYERS_URL + "/" + queryString);

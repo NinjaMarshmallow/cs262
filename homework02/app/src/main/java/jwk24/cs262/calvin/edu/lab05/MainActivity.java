@@ -25,20 +25,26 @@ import java.util.List;
 
 import jwk24.cs262.calvin.edu.lab05.R;
 
-public class MainActivity extends AppCompatActivity  implements LoaderManager.LoaderCallbacks<String> {
+public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
 
     private EditText mBookInput;
     private String[] players = new String[]{R.string.check_network_text};
     private RecyclerView mRecyclerView;
     private LinearLayoutManager mLayoutManager;
     private RecyclerAdapter mAdapter;
+
+    /*
+     * Construction procedure called from constructor
+     *
+     * Initializes member variables
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-         mBookInput = findViewById(R.id.bookInput);
-        if(getSupportLoaderManager().getLoader(0)!=null){
-            getSupportLoaderManager().initLoader(0,null,this);
+        mBookInput = findViewById(R.id.bookInput);
+        if (getSupportLoaderManager().getLoader(0) != null) {
+            getSupportLoaderManager().initLoader(0, null, this);
         }
         players = new String[];
         mRecyclerView = (RecyclerView) findViewById(R.id.player_list);
@@ -57,6 +63,11 @@ public class MainActivity extends AppCompatActivity  implements LoaderManager.Lo
 
     }
 
+    /*
+     * onclick function for the search button
+     * Queries an API with the input provided by the input text field
+     * @param View
+     */
     public void searchBooks(View view) {
 
         String queryString = mBookInput.getText().toString();
@@ -73,10 +84,8 @@ public class MainActivity extends AppCompatActivity  implements LoaderManager.Lo
         if (networkInfo != null && networkInfo.isConnected()) {
             Bundle queryBundle = new Bundle();
             queryBundle.putString("queryString", queryString);
-            getSupportLoaderManager().restartLoader(0, queryBundle,this);
-        }
-
-        else {
+            getSupportLoaderManager().restartLoader(0, queryBundle, this);
+        } else {
             players = new String[]{R.string.check_network_text};
         }
     }
@@ -87,21 +96,24 @@ public class MainActivity extends AppCompatActivity  implements LoaderManager.Lo
         return new BookLoader(this, bundle.getString("queryString"));
     }
 
+    /*
+     * Callback function for when the API query completes
+     */
     @Override
     public void onLoadFinished(@NonNull Loader<String> loader, String s) {
         System.out.println(s);
         try {
             JSONObject json = new JSONObject(s);
-            if(json.isNull("items")) {
+            if (json.isNull("items")) {
                 handleSinglePlayer(json);
             } else {
                 handleListOfPlayers(json);
             }
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         System.out.println(players);
-        for(String player : players){
+        for (String player : players) {
             System.out.println(player);
         }
     }
@@ -114,11 +126,11 @@ public class MainActivity extends AppCompatActivity  implements LoaderManager.Lo
     private void handleListOfPlayers(JSONObject json) {
         try {
             JSONArray itemsArray = json.getJSONArray("items");
-            for(int i = 0; i<itemsArray.length(); i++){
+            for (int i = 0; i < itemsArray.length(); i++) {
                 JSONObject item = itemsArray.getJSONObject(i);
                 handleSinglePlayer(item);
             }
-        } catch(JSONException ex) {
+        } catch (JSONException ex) {
             ex.printStackTrace();
         }
     }
@@ -130,7 +142,7 @@ public class MainActivity extends AppCompatActivity  implements LoaderManager.Lo
         try {
             id = json.getString("id");
             email = json.getString("emailAddress");
-            if(!json.isNull("name")) {
+            if (!json.isNull("name")) {
                 name = json.getString("name");
             }
         } catch (JSONException exForList) {

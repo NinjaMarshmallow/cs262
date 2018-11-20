@@ -14,13 +14,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     String[] operator_array = { "+", "-", "*", "/", "^" };
 
+    /*
+     * initialization function called during construction
+     * @param Bundle
+     * @return void
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initializeSpinner();
     }
-
+    /*
+     * initializes the operator selection spinner
+     * Comments like this seem pretty useless...
+     */
     private void initializeSpinner() {
         Spinner spinner = findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -41,9 +49,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
+    /*
+     * onclick function for the Calculate Button
+     * <p>
+     * Calculates a result based on the current values of the
+     * two number fields and applies the currently selected
+     * operator to them. Then sets the result text to the new value.
+     */
     public void calculateResult(View view) {
-        // Takes the values of the fields and applies the current operator to them
-        // The result is set as the text of the Result TextView
         EditText value1 = findViewById(R.id.value1field);
         EditText value2 = findViewById(R.id.value2field);
         Spinner spinner = findViewById(R.id.spinner);
@@ -71,8 +84,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         text.setText(Double.toString(roundOff(result, 2)));
     }
 
+    /*
+     * Rounds some double to a certain amount of decimal places
+     * @param double number
+     * @param int decimals
+     * @return double
+     */
     private double roundOff(double number, int decimals) {
-        // Rounds a double to the desired number of decimal places
         double scaleFactor = 10 * decimals;
         return Math.round(number * scaleFactor) / scaleFactor;
     }
