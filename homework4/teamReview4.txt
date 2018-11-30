@@ -1,0 +1,5 @@
+2.
+
+	a. Their user test was very good, they had it planned out very well and hit all the important points especially the parts about you can leave at any time and don't worry about not being able to understand how to carry out the tasks. Their whole system seemed to be functional with the exception of their "Dark Theme" toggle. There were a few bugs I found, but overal it was in very good shape for 2 weeks left in development.
+
+	b. There is an appropriate amount of code pushed into their client repo. Whatever that means. Amount of code doesn't really mean anything.
